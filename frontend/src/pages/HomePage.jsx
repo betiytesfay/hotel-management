@@ -1,13 +1,14 @@
+import Navbar from "../components/Navbar"
 import Hero from "../components/Hero";
-import BookingBar from "../components/BookingBar";
-import RoomsSection from "../components/RoomsSection";
-
+import Footer from "../components/Footer";
+import HotelStory from "../components/HotelStory";
 const Home = () => {
   return (
-    <div>
+    <div style={{ width: "100%", minHeight: "100vh" }}>
+      <Navbar />
       <Hero />
-      <BookingBar />
-      <RoomsSection />
+      <HotelStory />
+      <Footer />
     </div>
   );
 };
