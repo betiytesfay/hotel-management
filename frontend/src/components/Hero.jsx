@@ -32,13 +32,19 @@ const Hero = () => {
 
 
   return (
-    <section
-      className="relative w-full h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center text-white overflow-hidden"
-      style={{
-        backgroundImage:
-          `url(${slides[index].image})`,
-      }}
-    >
+    <section className="relative w-full h-screen flex items-center justify-center text-white overflow-hidden">
+
+      {slides.map((slide, i) => (
+        <div
+          key={i}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url(${slide.image})`,
+            opacity: i === index ? 1 : 0,
+          }}
+        />
+      ))}
+
       {/* overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-[#C8A96A]/20" />
 

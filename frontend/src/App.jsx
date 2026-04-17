@@ -6,6 +6,7 @@ import './App.css'
 import Home from './pages/HomePage';
 import Rooms from './pages/RoomsPage';
 import Navbar from './components/Navbar';
+import RoomDetailPage from "./pages/RoomDetailPage"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/rooms" element={<Rooms />} />
+        <Route path="/room/:id" element={<RoomDetailPage />} />
       </Routes>
     </Router>
   )
