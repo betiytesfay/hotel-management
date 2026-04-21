@@ -1,4 +1,6 @@
+import { useNavigate } from 'react-router-dom'
 const RoomCard = ({ room }) => {
+  const navigate = useNavigate()
   return (
     <div onClick={() => navigate(`/rooms/${room.id}`)}
       className="rounded-xl overflow-hidden shadow-md bg-white hover:shadow-lg transition">
