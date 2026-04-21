@@ -25,7 +25,7 @@ const RoomDetailsPage = () => {
   if (error) return <div>error has occured</div>
 
   return (
-    <div className="p-10 pt-20 grid grid-cols-3 gap-8">
+    <div className="p-10 pt-20 grid grid-cols-3 gap-8 items-start">
 
       <div className="col-span-2 space-y-6">
         <RoomGallery images={room.images} />
@@ -34,7 +34,7 @@ const RoomDetailsPage = () => {
         <RoomDescription description={room.description} />
       </div>
 
-      <div className="">
+      <div className="sticky top-20">
         <RoomBookingCard room={room} />
       </div>
 

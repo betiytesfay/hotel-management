@@ -4,36 +4,23 @@ import axios from "axios"
 import { useQuery } from "@tanstack/react-query"
 
 const RoomsSection = () => {
-  const [rooms, setRooms] = useState([]);
 
-  useEffect(() => {
-    const getRooms = async () => {
-      try {
-        const response = await axios.get("http://localhost:5000/api/rooms")
-        setRooms(response.data)
-      }
-      catch (err) {
-        console.error("error getting rooms", err);
-      }
-
-    }
-    getRooms();
-  }, []);
-  const { id } = usesParams()
-  const getRoomById = async (id) => {
+  const getRooms = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/rooms/${id}`)
-
-    } catch (err) {
-      console.err(err);
+      const response = await axios.get("http://localhost:5000/api/rooms")
+      return response.data
     }
+    catch (err) {
+      console.error("error getting rooms", err);
+      return []
+    }
+
   }
-  const { isLoading, error, data } = useQuery({
-    queryKey: ['room'],
-    queryFn: getRoomById
+  const { isLoading, error, data: rooms = [] } = useQuery({
+    queryKey: ['rooms'],
+    queryFn: getRooms
   })
-  if (isLoading) return <div>isLoading please wait</div>
-  if (error) return <div>error has occured</div>
+
   return (
     <section style={{ padding: "40px" }}>
       <h2>Available Rooms</h2>
