@@ -68,11 +68,12 @@ const Hero = () => {
 
         {/* buttons */}
         <div className="flex gap-4 justify-center">
-          <button className="bg-[#C8A96A] px-6 py-3 text-white hover:opacity-90 transition">
+          <button className="bg-[#C8A96A] px-6 py-3 rounded-sm text-white hover:opacity-90 transition font-bold hover:-translate-y-0.5 hover:cursor-pointer">
             Book Now
           </button>
 
-          <button className="border border-[#F7F3EA] px-6 py-3 text-[#F7F3EA] hover:bg-white hover:text-black transition">
+          <button className="border border-[#F7F3EA] px-6 py-3 rounded-sm hover:text-[#C8A96A] hover:-translate-y-0.5 text-[#F7F3EA] hover:bg-white hover:cursor-pointer
+          font-bold transition">
             Contact Us
           </button>
         </div>

@@ -23,4 +23,4 @@ const RoomAmenities = ({ amenities = [] }) => {
   );
 };
 
-export default RoomAmenities;
+export default RoomAmenities; ss
